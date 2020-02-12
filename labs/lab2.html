@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab2</title>
+    <link rel="stylesheet" href="../css/lab2.css">
+</head>
+
+<body>
+    <main>
+
+        <div class="cone-surface-calculation">
+            <h4>Площадь поверхности конуса</h4>
+            <img src="../img/lab2-formula1-1.png" alt="formula">
+            <img src="../img/lab2-formula1-2.png" alt="formula">
+            <label for="cone-radius">Радиус основы (см)</label><input id="cone-radius" type="text">
+            <label for="height">Высота конуса (см)</label><input id="height" type="text">
+            <button id="cone-surface-btn">Рассчитать</button>
+            <div class="answer">Ответ: <span class="answer-area"></span></div>
+        </div>
+
+        <div class="arc-length-calculation">
+            <h4>Длина дуги</h4>
+            <img src="../img/lab2-formula2.png" alt="formula">
+            <label for="circle-radius">Радиус окружности (см)</label><input id="circle-radius" type="text">
+            <label for="center-angle">Центральный угол</label><input id="center-angle" type="text">
+            <button id="arc-length-btn">Рассчитать</button>
+            <div class="answer">Ответ: <span class="answer-area"></span></div>
+        </div>
+
+        <div class="triangle-area-calculation">
+            <h4>Площадь треугольниа</h4>
+            <img src="../img/lab2-formula3.png" alt="formula">
+            <label for="first-side">Первая сторона (см)</label><input id="first-side" type="text">
+            <label for="second-side">Вторая сторона (см)</label><input id="second-side" type="text">
+            <label for="angle">Угол между сторонами</label><input id="angle" type="text">
+            <button id="triangle-area-btn">Рассчитать</button>
+            <div class="answer">Ответ: <span class="answer-area"></span></div>
+        </div>
+
+    </main>
+
+    <script src="../js/lab2.js"></script>
+
+</body>
+
+</html>
