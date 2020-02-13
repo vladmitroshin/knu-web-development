@@ -45,7 +45,7 @@ triangleButton.addEventListener('click', function () {
         alert('Введите числовые значения!');
     } else if (firstSide <= 0 || secondSide <= 0) {
         alert('Радиус должен быть больше нуля!');
-    } else if (angle <= 0 || angle > 180) {
+    } else if (angle <= 0 || angle >= 180) {
         alert('Угол должен быть в диапазоне от 0 до 180 градусов!');
     } else {
         let answerArea = document.getElementsByClassName('answer-area');
