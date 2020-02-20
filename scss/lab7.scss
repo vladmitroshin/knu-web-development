@@ -1,0 +1,90 @@
+html {
+	font-size: 16px;
+	font-family: sans-serif;
+
+	h1 {
+		text-align: center;
+		margin: .1rem;
+		padding: .1rem;
+	}
+
+	.popup {
+		display: none;
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		background-color: rgba(0, 0, 0, .9);
+
+	}
+
+	.popup-content {
+		position: relative;
+		text-align: center;
+		background-color: yellow;
+		padding: .4rem 1rem;
+		width: 40%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2),
+			0 6px 20px 0 rgba(0, 0, 0, .19);
+		animation-name: animatetop;
+		animation-duration: .4s;
+	}
+
+	@keyframes animatetop {
+		from {
+			top: -300px;
+			opacity: 0;
+		}
+
+		to {
+			top: 0;
+			opacity: 1;
+		}
+	}
+
+	.second-part {
+		margin-top: 2rem;
+
+		.run-btn {
+			margin: auto;
+			display: block;
+			height: 2rem;
+			width: 10rem;
+		}
+
+		.container {
+			position: relative;
+			height: 4rem;
+		}
+
+		.box {
+			margin: 1rem 0;
+			position: absolute;
+			color: blue;
+			font-size: 1.2rem;
+			text-shadow: 1px 1px 3px #000;
+		}
+	}
+
+	.third-part {
+		form {
+			width: 25rem;
+			margin: 0 auto;
+			background-color: #aaa;
+			padding: 1rem;
+
+			div {
+				margin: .5rem 0;
+			}
+
+			.control-word {
+				display: none;
+			}
+
+			.active {
+				display: block;
+			}
+		}
+	}
+}
