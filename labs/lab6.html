@@ -1,12 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lab6</title>
+    <link rel="stylesheet" href="../css/lab6.css">
 </head>
+
 <body>
-    <p>Sixth lab</p>
+    <div class="first-part">
+        <form action="#">
+            <li class="form-row">
+                <label for="first-name">Имя</label>
+                <input type="text" name="first-name" id="first-name" required>
+            </li>
+            <li class="form-row">
+                <label for="last-name">Фамилия</label>
+                <input type="text" name="last-name" id="last-name" required>
+            </li>
+            <li class="form-row">
+                <label for="org-name">Организация</label>
+                <input type="text" name="org-name" id="org-name" required>
+            </li>
+            <li class="form-row">
+                <label for="card-number">Номер карты</label>
+                <input type="text" name="card-number" id="card-number" required>
+            </li>
+            <li class="form-row">
+                <label for="phone-number">Номер телефона</label>
+                <input type="tel" name="phone-number" id="phone-number" required>
+            </li>
+            <li class="form-row">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </li>
+        </form>
+        <button id="submit-button-1">Отправить</button>
+        <button id="reset-button-1">Очистить</button>
+    </div>
+
+    <div class="second-part" id="second-part">
+        <form action="#">
+            <li class="form-row">
+                <input type="text" id="input-string" value="ave a#a a2a a$a a4a a5a a-a aca">
+            </li>
+            <p>Результат: <span id="result"></span></p>
+        </form>
+        <button id="submit-button-2">Выполнить замену</button>
+        <button id="reset-button-2">Очистить поле</button>
+    </div>
+
+    <script src="../js/lab6.js"></script>
+
 </body>
+
 </html>
