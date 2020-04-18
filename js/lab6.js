@@ -65,14 +65,12 @@ document.getElementById('reset-button-1').addEventListener('click', function () 
 });
 
 //input card code as 1234 5678 9012 3456
-for (let i in ['input', 'change', 'blur', 'keyup']) {
-    cardNumber.addEventListener('input', formatCardCode, false);
-}
-function formatCardCode() {
+
+cardNumber.addEventListener('input', function () {
     let cardCode = this.value.replace(/[^\d]/g, '').substring(0, 16);
     cardCode = cardCode != '' ? cardCode.match(/.{1,4}/g).join(' ') : '';
     this.value = cardCode;
-}
+});
 
 
 // second part

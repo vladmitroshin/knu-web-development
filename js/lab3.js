@@ -1,165 +1,39 @@
-// (function e(t, n, r) {
-//     function s(o, u) {
-//       if (!n[o]) {
-//         if (!t[o]) {
-//           var a = typeof require == "function" && require;
-//           if (!u && a) return a(o, !0);
-//           if (i) return i(o, !0);
-//           var f = new Error("Cannot find module '" + o + "'");
-//           throw ((f.code = "MODULE_NOT_FOUND"), f);
-//         }
-//         var l = (n[o] = { exports: {} });
-//         t[o][0].call(
-//           l.exports,
-//           function(e) {
-//             var n = t[o][1][e];
-//             return s(n ? n : e);
-//           },
-//           l,
-//           l.exports,
-//           e,
-//           t,
-//           n,
-//           r
-//         );
-//       }
-//       return n[o].exports;
-//     }
-//     var i = typeof require == "function" && require;
-//     for (var o = 0; o < r.length; o++) s(r[o]);
-//     return s;
-//   })(
-//     {
-//       1: [
-//         function(require, module, exports) {
-//           "use strict";
-//           Object.defineProperty(exports, "__esModule", { value: !0 }),
-//             (exports.ButtonsList = [
-//               "7;8;9;/[;C[",
-//               "4;5;6;*[;<[",
-//               "1;2;3;+[;=|[",
-//               "0;00;.;-["
-//             ]); 
-//         },
-//         {}
-//       ],
-//       2: [
-//         function(require, module, exports) {
-//           "use strict";
-//           Object.defineProperty(exports, "__esModule", { value: true });
-//           function create(tagName, clasName, childs = []) {
-//             let elem = document.createElement(tagName);
-//             elem.className = clasName;
-//             return elem;
-//           }
-//           exports.create = create;
-//         },
-//         {}
-//       ],
-//       3: [
-//         function(require, module, exports) {
-//           "use strict";
-//           Object.defineProperty(exports, "__esModule", { value: true });
-//           const buttons_1 = require("./lib/buttons");
-//           const element_1 = require("./lib/element");
-//           class Calc {
-//             static get variable() {
-//               let i = parseInt(this._v);
-//               if (!isNaN(i) && i === 0) this._v = "";
-//               return this._v;
-//             }
-//             static set variable(v) {
-//               if (!v.length) v = "0";
-//               this._v = v;
-//               this.view.innerHTML = v;
-//             }
-//             static init() {
-//               let keyboard = element_1.create("table", "keyboard");
-//               let keyOn = v => {
-//                 return () => {
-//                   let vs = this.variable;
-//                   if (/[0-9]/.test(v)) this.variable += v;
-//                   if (
-//                     /[\.\-\/\*\+]/.test(v) &&
-//                     !/[\.\-\/\*\+]/.test(vs[vs.length - 1])
-//                   )
-//                     this.variable += v;
-//                   if (v === "=") this.variable = eval(this.variable).toString();
-//                   if (v === "C") {
-//                     this.hystory = [];
-//                     this.variable = "";
-//                   }
-//                   if (v === "<") {
-//                     try {
-//                       this.variable = this.hystory.pop();
-//                     } catch (e) {
-//                       this.variable = "";
-//                     }
-//                   } else if (vs !== this.variable) this.hystory.push(vs);
-//                 };
-//               };
-//               window.addEventListener("keydown", e => {
-//                 let v = e.key;
-//                 if (v === "Enter") v = "=";
-//                 if (v === "Backspace") v = "<";
-//                 if (v === "Escape") v = "C";
-//                 keyOn(v)();
-//               });
-//               for (let keyString of buttons_1.ButtonsList) {
-//                 let tr = element_1.create("tr", "keyboard-row");
-//                 let buttons = keyString.split(";");
-//                 for (let button of buttons) {
-//                   let td = element_1.create("td", "keyboard-key");
-//                   let v = (td.innerText = button.replace(/[\[\|]/g, ""));
-//                   td.onclick = keyOn(v);
-//                   if (button.indexOf("|") !== -1) td.setAttribute("rowspan", "2");
-//                   if (button.indexOf("[") !== -1) td.classList.add("soft");
-//                   tr.appendChild(td);
-//                 }
-//                 keyboard.appendChild(tr);
-//               }
-//               document.querySelector(".container").appendChild(keyboard);
-//             }
-//           }
-//           Calc.view = document.querySelector(".view");
-//           Calc._v = "0";
-//           Calc.hystory = [];
-//           Calc.init();
-//         },
-//         { "./lib/buttons": 1, "./lib/element": 2 }
-//       ]
-//     },
-//     {},
-//     [3]
-//   );
-
-
-
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll('button:nth-child(n+5)');
 let inputText = document.getElementById('input_text');
+let isAngularMeasureChange = false;
 let result;
 
 buttons.forEach(function (element) {
-  element.addEventListener('click', function (e) {
-    inputText.value += element.innerHTML;
-    console.log(e.target);
-  })
+    element.addEventListener('click', function (e) {
+        inputText.value += element.innerHTML;
+    });
 });
 
-document.getElementById('equal').addEventListener('click', (e) => {
-  let formula = inputText.value.substring(0, inputText.value.length - 1);
-  console.log(formula);
-  // if(isNaN(formula[formula.length - 1])) {
-  //   inputText.value = 'Error!';
-  // } else {
-    result = eval(formula);
-    inputText.value = result;
-  // }
+document.getElementById('angularMeasure').addEventListener('click', (e) => {
+    isAngularMeasureChange = !isAngularMeasureChange;
+    if (isAngularMeasureChange) e.target.innerHTML = 'rad';
+    else e.target.innerHTML = 'deg';
+});
+
+document.getElementById('equal').addEventListener('click', () => {
+    let formula = inputText.value.substring(0, inputText.value.length - 1);
+    formula = formula.replace(/sin/g, 'Math.sin').replace(/cos/g, 'Math.cos').replace(/tan/g, 'Math.tan');
+    if (isAngularMeasureChange) {
+        formula = formula.replace(/sin\(/, 'sin(Math.PI / 180 * ').replace(/cos\(/, 'cos(Math.PI / 180 * ').replace(/tan\(/, 'tan(Math.PI / 180 * ');
+    }
+    try {
+        result = eval(formula);
+        inputText.value = parseFloat(result.toFixed(6));
+    }
+    catch (err) {
+        inputText.value = 'Error!';
+    }
 });
 
 document.getElementById('all_clean').addEventListener('click', () => {
-  inputText.value = '';
+    inputText.value = '';
 });
 
-
-
+document.getElementById('clean').addEventListener('click', () => {
+    inputText.value = inputText.value.substring(0, inputText.value.length - 1);
+});
