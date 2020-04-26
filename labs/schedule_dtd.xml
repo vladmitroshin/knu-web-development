@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE schedule [
+
+<!ELEMENT schedule (record*)>
+<!ELEMENT record (doctor+, photo?, week+, speciality+, office_number+)>
+
+<!ELEMENT doctor (surname, name, patronymic?)>
+<!ELEMENT surname (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT patronymic (#PCDATA)>
+
+<!ELEMENT photo (#PCDATA)>
+
+<!ELEMENT week (day+)>
+<!ELEMENT day (#PCDATA)>
+
+<!ELEMENT speciality (#PCDATA)>
+<!ELEMENT office_number (#PCDATA)>
+
+<!ATTLIST record id ID #REQUIRED>
+<!ATTLIST day class NMTOKEN #IMPLIED>
+<!ATTLIST photo
+    src CDATA #REQUIRED
+    alt CDATA #IMPLIED>
+
+<!ENTITY Mo "Monday">
+<!ENTITY Tu "Tuesday">
+<!ENTITY We "Wednesday">
+<!ENTITY Th "Thursday">
+<!ENTITY Fr "Friday">
+
+]>
+
+<schedule>
+
+    <record id="x1">
+        <doctor>
+            <surname>Иванов</surname>
+            <name>Иван</name>
+            <patronymic>Иванович</patronymic>
+        </doctor>
+        <photo src="image1.jpg" alt="image"/>
+        <week>
+            <day class="&Mo;">10:00-15:00</day>
+            <day class="&We;">9:00-16:00</day>
+            <day class="&Fr;">14:00-17:00</day>
+        </week>
+        <speciality>Терапевт</speciality>
+        <office_number>111</office_number>
+    </record>
+
+    <record id="x2">
+        <doctor>
+            <surname>Петров</surname>
+            <name>Пётр</name>
+            <patronymic>Петрович</patronymic>
+        </doctor>
+        <photo src="image2.jpg" alt="image"/>
+        <week>
+            <day class="&Mo;">12:00-16:00</day>
+            <day class="&Tu;">8:00-13:00</day>
+            <day class="&Th;">10:00-15:00</day>
+        </week>
+        <speciality>Невролог</speciality>
+        <office_number>123</office_number>
+    </record>
+
+</schedule>
