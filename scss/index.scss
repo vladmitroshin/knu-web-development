@@ -53,6 +53,7 @@ html {
         align-items: center;
         text-transform: uppercase;
         list-style: none;
+        margin: 2rem 0;
 
         li a {
             color: #fff;
@@ -61,26 +62,26 @@ html {
             cursor: pointer;
             transition: all .5s ease;
             position: relative;
-        }
 
-        li a:after {
-            background-color: $nav-color;
-            display: block;
-            content: "";
-            height: 2px;
-            width: 0%;
-            left: 50%;
-            position: absolute;
-            -webkit-transition: width .3s ease-in-out;
-            -moz--transition: width .3s ease-in-out;
-            transition: width .3s ease-in-out;
-            -webkit-transform: translateX(-50%);
-            -moz-transform: translateX(-50%);
-            transform: translateX(-50%);
-        }
+            &::after {
+                background-color: $nav-color;
+                display: block;
+                content: "";
+                height: 2px;
+                width: 0%;
+                left: 50%;
+                position: absolute;
+                -webkit-transition: width .3s ease-in-out;
+                -moz--transition: width .3s ease-in-out;
+                transition: width .3s ease-in-out;
+                -webkit-transform: translateX(-50%);
+                -moz-transform: translateX(-50%);
+                transform: translateX(-50%);
+            }
 
-        li a:hover {
-            color: $nav-color;
+            &:hover {
+                color: $nav-color;
+            }
         }
 
         li a:hover:after,

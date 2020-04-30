@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<schedule xmlns="https://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.w3schools.com schedule.xsd">
+    
+    <record id="x1">
+        <doctor>
+            <surname>Иванов</surname>
+            <name>Иван</name>
+            <patronymic>Иванович</patronymic>
+        </doctor>
+        <photo src="image1.jpg" alt="image"></photo>
+        <week>
+            <day class="Monday">10:00-15:00</day>
+            <day class="Tuesday">-</day>
+            <day class="Wednesday">9:00-16:00</day>
+            <day class="Thursday">-</day>
+            <day class="Friday">14:00-17:00</day>
+        </week>
+        <speciality>Терапевт</speciality>
+        <office_number>111</office_number>
+    </record>
+
+    <record id="x2">
+        <doctor>
+            <surname>Петров</surname>
+            <name>Пётр</name>
+            <patronymic>Петрович</patronymic>
+        </doctor>
+        <photo src="image2.jpg" alt="image"></photo>
+        <week>
+            <day class="Monday">12:00-16:00</day>
+            <day class="Tuesday">8:00-13:00</day>
+            <day class="Wednesday">-</day>
+            <day class="Thursday">10:00-15:00</day>
+            <day class="Friday">-</day>
+        </week>
+        <speciality>Невролог</speciality>
+        <office_number>123</office_number>
+    </record>
+
+    <record id="x3">
+        <doctor>
+            <surname>Андреев</surname>
+            <name>Андрей</name>
+            <patronymic>Андреевич</patronymic>
+        </doctor>
+        <photo src="image3.jpg" alt="image"></photo>
+        <week>
+            <day class="Monday">-</day>
+            <day class="Tuesday">10:00-14:00</day>
+            <day class="Wednesday">9:00-16:00</day>
+            <day class="Thursday">-</day>
+            <day class="Friday">14:00-17:00</day>
+        </week>
+        <speciality>Кардиолог</speciality>
+        <office_number>120</office_number>
+    </record>
+
+</schedule>

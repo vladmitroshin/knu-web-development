@@ -12,8 +12,11 @@ listOfLabs.forEach(function (listItem, index) {
     });
 });
 
-
-
+let clientScreenWidth = document.documentElement.clientWidth;
+if (clientScreenWidth < 1700) {
+    alert(`Ширина вашего монитора составляет ${clientScreenWidth} px. 
+Рекомендуется увеличить ширину экрана до 1920 px в помощью веб-инспектора для корректного отображения проекта.`);
+}
 
 // Доступ к iframe с одного домена на дж квери можно сделать так
 // $('iframe').contents().find('body'); - боди вашего фрейма

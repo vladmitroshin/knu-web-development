@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="schedule_styling.xsl"?>
+
+<schedule>
+    
+    <record>
+        <doctor>
+            <surname>Иванов</surname>
+            <name>Иван</name>
+            <patronymic>Иванович</patronymic>
+        </doctor>
+        <week>
+            <Monday>10:00-15:00</Monday>
+            <Tuesday>-</Tuesday>
+            <Wednesday>12:00-16:30</Wednesday>
+            <Thursday>-</Thursday>
+            <Friday>14:00-17:00</Friday>
+        </week>
+        <speciality>Терапевт</speciality>
+        <office_number>150</office_number>
+    </record>
+
+    <record>
+        <doctor>
+            <surname>Петров</surname>
+            <name>Пётр</name>
+            <patronymic>Петрович</patronymic>
+        </doctor>
+        <week>
+            <Monday>13:00-16:00</Monday>
+            <Tuesday>08:00-13:00</Tuesday>
+            <Wednesday>-</Wednesday>
+            <Thursday>14:00-16:00</Thursday>
+            <Friday>-</Friday>
+        </week>
+        <speciality>Невролог</speciality>
+        <office_number>123</office_number>
+    </record>
+
+    <record>
+        <doctor>
+            <surname>Андреев</surname>
+            <name>Андрей</name>
+            <patronymic>Андреевич</patronymic>
+        </doctor>
+        <week>
+            <Monday>-</Monday>
+            <Tuesday>10:00-14:00</Tuesday>
+            <Wednesday>10:00-14:00</Wednesday>
+            <Thursday>-</Thursday>
+            <Friday>14:00-17:00</Friday>
+        </week>
+        <speciality>Кардиолог</speciality>
+        <office_number>120</office_number>
+    </record>
+
+    <record>
+        <doctor>
+            <surname>Смирнов</surname>
+            <name>Александр</name>
+            <patronymic>Викторович</patronymic>
+        </doctor>
+        <week>
+            <Monday>09:00-15:00</Monday>
+            <Tuesday>-</Tuesday>
+            <Wednesday>09:00-16:00</Wednesday>
+            <Thursday>09:30-13:30</Thursday>
+            <Friday>-</Friday>
+        </week>
+        <speciality>Отоларинголог</speciality>
+        <office_number>228</office_number>
+    </record>
+
+    <record>
+        <doctor>
+            <surname>Сидоров</surname>
+            <name>Владимир</name>
+            <patronymic>Константинович</patronymic>
+        </doctor>
+        <week>
+            <Monday>-</Monday>
+            <Tuesday>13:30-17:30</Tuesday>
+            <Wednesday>-</Wednesday>
+            <Thursday>09:30-13:30</Thursday>
+            <Friday>-</Friday>
+        </week>
+        <speciality>Ортопед</speciality>
+        <office_number>111</office_number>
+    </record>
+
+    <record>
+        <doctor>
+            <surname>Кузнецов</surname>
+            <name>Дмитрий</name>
+            <patronymic>Кондратьевич</patronymic>
+        </doctor>
+        <week>
+            <Monday>09:30-13:30</Monday>
+            <Tuesday>13:00-14:30</Tuesday>
+            <Wednesday>-</Wednesday>
+            <Thursday>-</Thursday>
+            <Friday>10:00-15:00</Friday>
+        </week>
+        <speciality>Педиатр</speciality>
+        <office_number>166</office_number>
+    </record>
+
+</schedule>
